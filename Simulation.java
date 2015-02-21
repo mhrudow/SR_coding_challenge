@@ -1,5 +1,5 @@
 public class Simulation {            
-    public static void series() {
+    public static void series(int amountRun) {
         Integer[] hitB = {47, 25, 25, 3};
         Integer[] returnHitB = {80, 45, 75};
         Player bL = new Player(hitB, returnHitB, "Bruce Leeds");
@@ -18,7 +18,7 @@ public class Simulation {
         games[2] = new Game(sW, jD);
         
         for (int i = 0; i < games.length; i++) {
-            for (int j = 0; j < 10000; j++) games[i].playGame();
+            for (int j = 0; j < amountRun; j++) games[i].playGame();
         }
         System.out.println(bL.getName() + " won " + bL.getWon() + " lost " +
                            bL.getLost());
@@ -29,7 +29,7 @@ public class Simulation {
                 
     }
     
-    public static void headToHead() {
+    public static void headToHead(int amountRun) {
         Integer[] hitB = {47, 25, 25, 3};
         Integer[] returnHitB = {80, 45, 75};
         Player bL1 = new Player(hitB, returnHitB, "Bruce Leeds");
@@ -50,7 +50,6 @@ public class Simulation {
         games[1] = new Game(bL2, jD1);
         games[2] = new Game(sW2, jD2);
         
-        int amountRun = 1000000;
         for (int i = 0; i < games.length; i++) {
             for (int j = 0; j < amountRun; j++) games[i].playGame();
         }
@@ -79,7 +78,7 @@ public class Simulation {
                                + (jD2.getWon() + 0.0)/(amountRun + 0.0)*100.0
                            + "%");                
     }    
-    public static void myPlayer() {
+    public static void myPlayer(int amountRun) {
         Integer[] hitB = {47, 25, 25, 3};
         Integer[] returnHitB = {80, 45, 75};
         Player bL = new Player(hitB, returnHitB, "Bruce Leeds");
@@ -103,7 +102,6 @@ public class Simulation {
         games[1] = new Game(rF2, sW);
         games[2] = new Game(rF3, jD);
         
-        int amountRun = 1000000;
         for (int i = 0; i < games.length; i++) {
             for (int j = 0; j < amountRun; j++) games[i].playGame();
         }
